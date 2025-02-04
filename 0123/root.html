@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>루트</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IN:wght@100..400&display=swap');
+* {
+  box-sizing: border-box;
+  width:50%;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  margin: 50px auto;
+  display: flex;
+}
+ #icon {
+  position: absolute;
+  font-size: 100px;
+ }
+
+.alarm {
+  border: 1px solid none;
+  background-color: red; 
+  border-radius: 50%;
+  color: white;
+  font-size: bold;
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  top: 8px; left: 55px;
+  font-family: 'Montserrat';
+}
+</style>
+</head>
+<body>
+  <div id="container">
+  <div>
+    <i class="fa-regular fa-bell" id="icon"></i>
+  <div class="alarm">4</div>
+</div>
+  </div>
+</body>
+</html>

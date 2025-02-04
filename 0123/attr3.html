@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline-block;
+      margin: 10px;
+    }
+    li a {
+      padding: 5px 20px;
+      font-size: 14px;
+      text-decoration: none;
+      color: brown;
+    }
+
+    /*class 속성 값에 button이포함된 요소에 스타일, 버튼이 있으면 적용시켜라*/
+     a[class ~= 'button'] {
+      box-shadow: rgba(0,26,255,0.594) 4px 4px;
+      border : 1px solid #222;
+      border-radius: 5px;
+     }
+  </style>
+</head>
+<body>
+  <ul>
+    <body>
+      <ul>
+        <li><a href="#" class="flat">HTML</a></li>
+        <li><a href="#" class="flat">CSS Selector Level 3</a></li>
+        <li><a href="#" class="button">미디어쿼리</a></li>
+        <li><a href="#" class="flat button">미디어쿼리</a></li>
+      </ul>
+    </body>
+</html>

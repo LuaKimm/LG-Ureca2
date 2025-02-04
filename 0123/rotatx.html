@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform</title>
+  <style>
+    #container {
+      width: 800px;
+      margin: 20px auto;
+    }
+
+    .origin {
+      width: 100px;
+      height: 180px;
+      border: 1px solid black;
+      margin: 30px;
+      float: left;
+      perspective: 200px;
+    }
+
+    .origin>div {
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+      /*트랜지션 효과 추가*/
+      transition: all 3s; /*3초 동안 회전하도록 트랜지션 적용*/
+
+    }
+    .rotatex {
+      transform: rotateX(55deg);
+    }
+    .rotatey {
+      transform: rotateY(55deg);
+    }
+    .rotatez {
+      transform: rotateZ(55deg);
+    }
+    .rotatexyz {
+      transform: rotate3d(2.5,1.2,-1.5,55deg);
+    }
+
+    .origin> div {
+      width: 152px;
+      height: 180px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="origin">
+    <div class="rotatex">
+    </div>
+    <div class="origin" id="pers">
+      <div class="rotatey">
+      </div>
+      <div class="origin">
+        <div class="rotatez">
+        </div>
+        <div class="origin" id="pers">
+          <div class="rotatexyz">
+          </div>
+  </div>
+</body>
+</html>

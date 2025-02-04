@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform</title>
+  <style>
+    .origin {
+      width: 152px;
+      height: 180px;
+      border: 1px solid black;
+      margin: 30px;
+      float: left;
+    }
+    .origin > div {
+      width: 152px;
+      height: 180px;
+    }
+    .rotatex:hover {
+      transform: rotateX(50deg);
+    }
+    /*두번째 이미지에 원근감 추가*/
+  #pers {
+    perspective: 300px; 
+    /*크면 클수록 멀게 작으면 작을 수록 가깝게*/
+  }
+  </style>
+</head>
+<body>
+  <div class="origin">
+    <div class="rotatex">
+      <img src="images/14/images/sunset.jpg" alt="Image">
+    </div>
+    <div class="origin" id="pers">
+      <div class="rotatex">
+        <img src="images/14/images/sunset.jpg" alt="Image">
+      </div>
+  </div>
+</body>
+</html>

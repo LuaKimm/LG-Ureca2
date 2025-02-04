@@ -1,0 +1,12 @@
+#accent {
+  background-color: black;
+  color: #fff;
+}
+p{
+  font-style: italic;
+}
+/*p 태그에 해당 되는 모든 사항 적용*/
+
+.blue {
+  color: blue;
+}
