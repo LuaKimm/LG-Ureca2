@@ -1,8 +1,80 @@
+/*
+web에서 상대 경로 기준은 현재 화면이표시되고있는 URL(주소창의 URL)을 기준이다. (현재 작업하고 있는 파일 아님!!!!)
+그래서 cafe.js를 기준으로 경로를 설정하면 안된다.
+cafe.js는 index.html에서 사용되므로 index.html 기준으로 해야한다.
+*/
+fetch('assets/data/essay.json')
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+  essayBook(data);
+})
+
+function essayBook(data){
+  let content = `<h3 class="menu_title">[에세이]</h3>
+                    <ul>`
+
+                    data.forEach(item => {
+                      content += `<li>
+                                    <div class="menu_item">
+                                      <div class="menu_item_img">
+                                        <img src="img/book/${item.isbn}.png" alt="${item.title}" />
+                                      </div>
+                                      <div class="menu_item_info">
+                                      ${item.title} <br/> (${item.price}원)
+                                      </div>
+                                    </div>
+                                  </li>`;
+                    });
+                    
+                  content += `</ul>`;
+                  document.getElementById('econtent').innerHTML = content;
+}
+
+fetch('assets/data/programming.xml')
+.then(response => response.text())
+.then(data => {
+  console.log(data);
+  programmingBook(data);
+})
+
+function programmingBook(data){
+  let content = `<h3 class="menu_title">[프로그래밍]</h3>
+                    <ul>`
+
+                    //전송 받은 xml을 DOM tree로 구성하기 위해 DOMParser객체를 생성한다.
+                    let parser = new DOMParser();
+
+                    //문자열 형태로 된 xml 정보를 분석해서 DOM tree로 구성
+                    let xml = parser.parseFromString(data, "application/xml");
+
+                    //전송 받은 xml에서 book 태그를 모두 찾기
+                    let books = xml.querySelectorAll('book'); 
+
+                    books.forEach(book => { //book 태그를 반복 //book태그에서 isbn 태그 찾기
+                      content += `<li>
+                                    <div class="menu_item">
+                                      <div class="menu_item_img">
+                                              
+                                        <img src="img/book/${book.querySelector('isbn').textContent}.png" 
+                                              alt="${book.querySelector('title').textContent}" />
+                                      </div>
+                                      <div class="menu_item_info">
+                                      ${book.querySelector('title').textContent}} <br/> 
+                                      (${book.querySelector('price').textContent}원)
+                                      </div>
+                                    </div>
+                                  </li>`;
+                    });
+                    
+                  content += `</ul>`;
+                  document.getElementById('pcontent').innerHTML = content;
+}
 
 /*사용자 인증 처리를 위한 함수 */
 function login() {
   //id 입력 받을 수 있는 prompt
-  var id = prompt("아이디 입력", "ssafy");
+  var id = prompt("아이디 입력", "uplus");
 
   //password 입력 받을 수 있는 prompt
   var password = prompt("비밀번호 입력", "1234");
