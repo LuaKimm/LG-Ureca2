@@ -1,7 +1,5 @@
 /.project
 *.class
-<<<<<<< HEAD
+
 *.DS_Store
-=======
-.DS_Store
->>>>>>> branch 'main' of https://github.com/kdgfox/UPlusFrontEnd2.git
+
