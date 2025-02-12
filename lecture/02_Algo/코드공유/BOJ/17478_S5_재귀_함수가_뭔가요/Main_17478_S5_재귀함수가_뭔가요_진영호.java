@@ -10,7 +10,6 @@ public class Main_17478_S5_재귀함수가_뭔가요_진영호 {
 
 		System.out.println("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.");
 		react(0, n);
-		
 	}
 	
 	public static void react(int i, int n) {
@@ -30,16 +29,13 @@ public class Main_17478_S5_재귀함수가_뭔가요_진영호 {
 	}
 	
 	public static String bar(int i) {
-		if (i == 0) {
-			return "";
-		}
+		if (i == 0) return "";
 		return "____" + bar(i - 1);
 	}
 	
 	public static void answer(int i) {
-		if (i < 0) {return;}
+		if (i < 0) return;
 		System.out.println(bar(i) + "라고 답변하였지.");
 		answer(i - 1);
 	}
-	
 }
