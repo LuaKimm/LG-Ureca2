@@ -44,6 +44,9 @@ public class Permutation2_nPr1 {
 		permutation(0);
 		long end = System.currentTimeMillis();
 		System.out.printf("tc: %d   count:%d   time:%dms%n", tc, count, end-start);
+		
+		// 시간복잡도를 공간복잡도로 바꾸기
+		// boolean 배열 이용하기
 	}
 }
 
